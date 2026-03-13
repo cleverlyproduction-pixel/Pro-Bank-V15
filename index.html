@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProBankApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ProBankApp</h1>
+        <form id="depositForm">
+            <h2>Deposit Money</h2>
+            <input type="number" id="depositAmount" placeholder="Enter amount to deposit" required>
+            <input type="submit" value="Deposit">
+        </form>
+        <form id="withdrawForm">
+            <h2>Withdraw Money</h2>
+            <input type="number" id="withdrawAmount" placeholder="Enter amount to withdraw" required>
+            <input type="submit" value="Withdraw">
+        </form>
+        <footer>
+            <p>&copy; 2026 ProBankApp. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('depositForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const amount = document.getElementById('depositAmount').value;
+            alert('Deposited: $' + amount);
+        });
+        document.getElementById('withdrawForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const amount = document.getElementById('withdrawAmount').value;
+            alert('Withdrawn: $' + amount);
+        });
+    </script>
+</body>
+</html>
