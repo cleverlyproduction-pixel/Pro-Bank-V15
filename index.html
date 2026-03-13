@@ -3,80 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProBankApp</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        form {
-            margin: 20px 0;
-        }
-        input[type="number"], input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-    </style>
+    <title>Professional Banking Website</title>
 </head>
 <body>
-    <div class="container">
-        <h1>ProBankApp</h1>
-        <form id="depositForm">
-            <h2>Deposit Money</h2>
-            <input type="number" id="depositAmount" placeholder="Enter amount to deposit" required>
-            <input type="submit" value="Deposit">
+    <header>
+        <h1>Welcome to Our Banking Portal</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#fund-wallet">Fund Wallet</a></li>
+            <li><a href="#send-money">Send Money</a></li>
+            <li><a href="#transaction-history">Transaction History</a></li>
+            <li><a href="#bank-alerts">Bank Alerts</a></li>
+        </ul>
+    </nav>
+    <section id="fund-wallet">
+        <h2>Fund Wallet</h2>
+        <form>
+            <label for="amount">Amount (NGN):</label>
+            <input type="number" id="amount" name="amount" required>
+            <button type="submit">Fund Wallet</button>
         </form>
-        <form id="withdrawForm">
-            <h2>Withdraw Money</h2>
-            <input type="number" id="withdrawAmount" placeholder="Enter amount to withdraw" required>
-            <input type="submit" value="Withdraw">
+    </section>
+    <section id="send-money">
+        <h2>Send Money</h2>
+        <form>
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number" name="account-number" required>
+            <label for="bank">Bank:</label>
+            <input type="text" id="bank" name="bank" required>
+            <label for="sort-code">Sort Code:</label>
+            <input type="text" id="sort-code" name="sort-code" required>
+            <label for="send-amount">Amount (NGN):</label>
+            <input type="number" id="send-amount" name="send-amount" required>
+            <button type="submit">Send Money</button>
         </form>
-        <footer>
-            <p>&copy; 2026 ProBankApp. All rights reserved.</p>
-        </footer>
-    </div>
-    <script>
-        document.getElementById('depositForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const amount = document.getElementById('depositAmount').value;
-            alert('Deposited: $' + amount);
-        });
-        document.getElementById('withdrawForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const amount = document.getElementById('withdrawAmount').value;
-            alert('Withdrawn: $' + amount);
-        });
-    </script>
+    </section>
+    <section id="transaction-history">
+        <h2>Transaction History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Transaction Type</th>
+                    <th>Masked Account</th>
+                    <th>Amount (NGN)</th>
+                    <th>Available Balance (NGN)</th>
+                    <th>Narration</th>
+                    <th>Reference Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transaction History Data -->
+            </tbody>
+        </table>
+    </section>
+    <section id="bank-alerts">
+        <h2>Bank Alerts</h2>
+        <div>
+            <!-- SMS-style Bank Alerts Data -->
+            <p>CR | Masked Account: ******1234 | Amount: NGN 5,000 | Available Balance: NGN 20,000 | Narration: Fund Wallet | Date/Time: 2026-03-13 06:42:42 | Reference: REF123456789</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 Professional Banking Portal. All rights reserved.</p>
+    </footer>
 </body>
 </html>
