@@ -1,72 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-NG">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Banking Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251d">
+  <meta name="description" content="A clearly labeled, non-production wallet interface for learning and testing. No real money or accounts are involved.">
+  <title>OpenPay — Wallet Sandbox</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Banking Portal</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#fund-wallet">Fund Wallet</a></li>
-            <li><a href="#send-money">Send Money</a></li>
-            <li><a href="#transaction-history">Transaction History</a></li>
-            <li><a href="#bank-alerts">Bank Alerts</a></li>
-        </ul>
-    </nav>
-    <section id="fund-wallet">
-        <h2>Fund Wallet</h2>
-        <form>
-            <label for="amount">Amount (NGN):</label>
-            <input type="number" id="amount" name="amount" required>
-            <button type="submit">Fund Wallet</button>
-        </form>
-    </section>
-    <section id="send-money">
-        <h2>Send Money</h2>
-        <form>
-            <label for="account-number">Account Number:</label>
-            <input type="text" id="account-number" name="account-number" required>
-            <label for="bank">Bank:</label>
-            <input type="text" id="bank" name="bank" required>
-            <label for="sort-code">Sort Code:</label>
-            <input type="text" id="sort-code" name="sort-code" required>
-            <label for="send-amount">Amount (NGN):</label>
-            <input type="number" id="send-amount" name="send-amount" required>
-            <button type="submit">Send Money</button>
-        </form>
-    </section>
-    <section id="transaction-history">
-        <h2>Transaction History</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Date/Time</th>
-                    <th>Transaction Type</th>
-                    <th>Masked Account</th>
-                    <th>Amount (NGN)</th>
-                    <th>Available Balance (NGN)</th>
-                    <th>Narration</th>
-                    <th>Reference Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Transaction History Data -->
-            </tbody>
-        </table>
-    </section>
-    <section id="bank-alerts">
-        <h2>Bank Alerts</h2>
-        <div>
-            <!-- SMS-style Bank Alerts Data -->
-            <p>CR | Masked Account: ******1234 | Amount: NGN 5,000 | Available Balance: NGN 20,000 | Narration: Fund Wallet | Date/Time: 2026-03-13 06:42:42 | Reference: REF123456789</p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2026 Professional Banking Portal. All rights reserved.</p>
-    </footer>
+  <div class="demo-banner" role="note">
+    <span class="demo-dot" aria-hidden="true"></span>
+    <strong>Sandbox demo</strong>
+    <span>No real accounts, funds, payments, or transfers. Demo data resets when you reload.</span>
+  </div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="OpenPay sandbox home"><span class="brand-mark" aria-hidden="true">O</span><span>openpay<span class="brand-light"> sandbox</span></span></a>
+      <nav class="nav-links"><a class="nav-link active" href="#home"><span aria-hidden="true">▦</span> Overview</a><a class="nav-link" href="#actions"><span aria-hidden="true">↗</span> Demo actions</a><a class="nav-link" href="#activity"><span aria-hidden="true">◷</span> Activity</a></nav>
+      <div class="sidebar-note"><span class="note-icon" aria-hidden="true">ⓘ</span><p><strong>For testing only</strong><br>This prototype is not a bank or payment service.</p></div>
+      <div class="profile-mini"><span class="avatar">D</span><span><strong>Demo user</strong><small>Sample profile</small></span><span class="chevron" aria-hidden="true">⌄</span></div>
+    </aside>
+    <main id="home" class="main-content">
+      <header class="topbar"><div><p class="eyebrow">SANDBOX ACCOUNT</p><h1>Good morning, Demo user <span aria-hidden="true">☀</span></h1></div><div class="topbar-right"><span class="sandbox-pill"><span aria-hidden="true">●</span> Sandbox mode</span><button class="icon-button" type="button" aria-label="Notifications" title="Notifications are not connected">♧</button></div></header>
+      <section class="balance-card" aria-labelledby="balance-heading"><div class="balance-card-top"><div><p id="balance-heading" class="balance-label">Demo wallet balance <span class="demo-tag">SIMULATED</span></p><p class="balance-amount" id="balance" aria-live="polite">₦125,000.00</p></div><div class="wallet-symbol" aria-hidden="true">₦</div></div><div class="balance-footer"><span>Sample NGN wallet ·•• 2048</span><span>Not withdrawable</span></div></section>
+      <section id="actions" class="section-block" aria-labelledby="actions-heading"><div class="section-heading"><div><p class="eyebrow">TRY THE INTERFACE</p><h2 id="actions-heading">Sandbox actions</h2></div><span class="muted">All activity is simulated</span></div><div class="actions-grid"><button class="action-card" type="button" data-action="add"><span class="action-icon green" aria-hidden="true">＋</span><strong>Add demo funds</strong><small>Increase sample balance</small></button><button class="action-card" type="button" data-action="transfer"><span class="action-icon purple" aria-hidden="true">↗</span><strong>Simulate transfer</strong><small>Send to a sample contact</small></button><button class="action-card" type="button" data-action="airtime"><span class="action-icon orange" aria-hidden="true">▰</span><strong>Try airtime</strong><small>Preview a demo purchase</small></button><button class="action-card" type="button" data-action="bill"><span class="action-icon blue" aria-hidden="true">▤</span><strong>Try bill payment</strong><small>Preview a demo payment</small></button></div></section>
+      <section id="activity" class="section-block activity-section" aria-labelledby="activity-heading"><div class="section-heading"><div><p class="eyebrow">LOCAL TO THIS PAGE</p><h2 id="activity-heading">Demo activity</h2></div><button id="reset-demo" class="text-button" type="button">Reset demo</button></div><div class="activity-table-wrap"><table><thead><tr><th scope="col">Activity</th><th scope="col">Date</th><th scope="col">Amount</th><th scope="col">Status</th></tr></thead><tbody id="activity-list"><tr class="empty-state"><td colspan="4">No demo activity yet. Choose a sandbox action to try it.</td></tr></tbody></table></div><p class="activity-disclaimer">Entries are temporary browser state, not financial records or proof of payment.</p></section>
+      <footer>OpenPay Sandbox · Educational interface only · No real financial services</footer>
+    </main>
+  </div>
+  <dialog id="action-dialog" aria-labelledby="dialog-title"><form method="dialog" id="action-form"><div class="dialog-header"><div><p class="eyebrow">SANDBOX ONLY</p><h2 id="dialog-title">Demo action</h2></div><button class="icon-button close-button" value="cancel" aria-label="Close">×</button></div><p class="dialog-copy" id="dialog-copy">This changes only the sample balance displayed on this page.</p><label for="amount">Amount (NGN)</label><div class="input-wrap"><span aria-hidden="true">₦</span><input id="amount" name="amount" type="number" min="1" max="1000000" step="1" inputmode="numeric" placeholder="1,000" required></div><label for="recipient" id="recipient-label" hidden>Sample recipient</label><select id="recipient" name="recipient" hidden><option value="Ada Sample">Ada Sample · Sample wallet</option><option value="Tunde Demo">Tunde Demo · Sample wallet</option></select><p class="form-error" id="form-error" role="alert" hidden></p><div class="dialog-actions"><button class="button secondary" type="button" id="cancel-action">Cancel</button><button class="button primary" type="submit" id="submit-action">Run simulation</button></div><p class="dialog-footnote">No real payment is initiated. Do not enter real account details.</p></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
